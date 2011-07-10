@@ -1,0 +1,30 @@
+/* =============================================================================
+   HTML5 Boilerplate Styles
+   ========================================================================== */
+
+::-moz-selection { background: #fe57a1; color: #fff; text-shadow: none; }
+::selection { background: #fe57a1; color: #fff; text-shadow: none; }
+
+hr { display: block; height: 1px; border: 0; border-top: 1px solid #ccc; margin: 1em 0; padding: 0; }
+
+ins { background: #ff9; color: #000; text-decoration: none; }
+
+mark { font-style: italic; font-weight: bold; }
+
+small { font-size: 85%; }
+
+nav ul, nav ol {  margin: 0; padding: 0; }
+
+img { vertical-align: middle; }
+
+
+fieldset { border: 0; margin: 0; padding: 0; }
+
+legend { padding: 0; }
+
+label { cursor: pointer; }
+
+
+/* Colors for form validity */
+input:valid, textarea:valid {  }
+input:invalid, textarea:invalid { background-color: #f0dddd; }

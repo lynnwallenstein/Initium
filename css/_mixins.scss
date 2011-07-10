@@ -1,0 +1,67 @@
+/* =============================================================================
+   Non-semantic helper classes from HTML5 Boilerplate Converted to Mixins
+   ========================================================================== */
+
+/* @include ir : For image replacement */
+
+@mixin ir {
+  background-repeat: no-repeat;
+  direction: ltr;
+  display: block;
+  overflow: hidden;
+  text-align: left;
+  text-indent: -999em;
+  & br {
+    display: none;
+  }
+}
+
+
+/* @include hidden : Hide for both screenreaders and browsers: css-discuss.incutio.com/wiki/Screenreader_Visibility */
+
+@mixin hidden {
+  display: none;
+  visibility: hidden;
+}
+
+/* @include visuallyhidden : Hide only visually, but have it available for screenreaders: by Jon Neal. www.webaim.org/techniques/css/invisiblecontent/  &  j.mp/visuallyhidden */
+
+@mixin visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  &.focusable {
+    &:active, &:focus {
+       clip: auto;
+       height: auto;
+       margin: 0;
+       overflow: visible;
+       position: static;
+       width: auto;
+    }
+  }
+}
+
+/* @include invisible : Hide visually and from screenreaders, but maintain layout */
+
+@mixin invisible {
+  visibility: hidden;
+}
+
+/* @include clearfix : Contain floats: nicolasgallagher.com/micro-clearfix-hack/ */
+@mixin clearfix {
+  zoom: 1;
+  &:after, &:before {
+     content: "";
+     display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+

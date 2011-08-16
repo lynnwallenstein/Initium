@@ -1,7 +1,7 @@
-/*! normalize.css 2011-06-27T20:08 UTC · http://github.com/necolas/normalize.css */
+/*! normalize.css 2011-08-12T17:28 UTC · http://github.com/necolas/normalize.css */
 
 /* =============================================================================
-   HTML5 element display
+   HTML5 display definitions
    ========================================================================== */
 
 /*
@@ -23,15 +23,31 @@ section {
 
 /*
  * Corrects inline-block display not defined in IE6/7/8/9 & FF3
- * Known limitation: IE6 will not apply style for 'audio[controls]'
  */
 
-audio[controls],
+audio,
 canvas,
 video {
     display: inline-block;
     *display: inline;
     *zoom: 1;
+}
+
+/*
+ * Prevents modern browsers from displaying 'audio' without controls
+ */
+
+audio:not([controls]) {
+    display: none;
+}
+
+/*
+ * Addresses styling for 'hidden' attribute not present in IE7/8/9, FF3, S4
+ * Known issue: no IE6 support
+ */
+
+[hidden] {
+    display: none;
 }
 
 
@@ -43,18 +59,15 @@ video {
  * 1. Corrects text resizing oddly in IE6/7 when body font-size is set using em units
  *    http://clagnut.com/blog/348/#c790
  * 2. Keeps page centred in all browsers regardless of content height
- * 3. Removes Android and iOS tap highlight color to prevent entire container being highlighted
- *    www.yuiblog.com/blog/2010/10/01/quick-tip-customizing-the-mobile-safari-tap-highlight-color/
- * 4. Prevents iOS text size adjust after orientation change, without disabling user zoom
+ * 3. Prevents iOS text size adjust after orientation change, without disabling user zoom
  *    www.456bereastreet.com/archive/201012/controlling_text_size_in_safari_for_ios_without_disabling_user_zoom/
  */
 
 html {
     font-size: 100%; /* 1 */
     overflow-y: scroll; /* 2 */
-    -webkit-tap-highlight-color: rgba(0,0,0,0); /* 3 */
-    -webkit-text-size-adjust: 100%; /* 4 */
-    -ms-text-size-adjust: 100%; /* 4 */
+    -webkit-text-size-adjust: 100%; /* 3 */
+    -ms-text-size-adjust: 100%; /* 3 */
 }
 
 /*
@@ -152,7 +165,7 @@ mark {
 }
 
 /*
- * Corrects font family set oddly in IE6, S5, Chrome
+ * Corrects font family set oddly in IE6, S4/5, Chrome
  * en.wikipedia.org/wiki/User:Davidgothberg/Test59
  */
 
@@ -160,7 +173,7 @@ pre,
 code,
 kbd,
 samp {
-    font-family: monospace, monospace;
+    font-family: monospace, serif;
     _font-family: 'courier new', monospace;
     font-size: 1em;
 }
@@ -237,6 +250,7 @@ dd {
 nav ul,
 nav ol {
     list-style: none;
+    list-style-image: none;
 }
 
 
@@ -336,12 +350,22 @@ input {
 }
 
 /*
+ * Corrects overlap and whitespace issue for buttons and inputs in IE6/7
+ * Known issue: reintroduces inner spacing
+ */
+
+table button,
+table input {
+    *overflow: auto;
+}
+
+/*
  * 1. Improves usability and consistency of cursor style between image-type 'input' and others
  * 2. Corrects inability to style clickable 'input' types in iOS
  */
 
 button,
-input[type="button"],
+html input[type="button"],
 input[type="reset"],
 input[type="submit"] {
     cursor: pointer; /* 1 */
@@ -349,12 +373,14 @@ input[type="submit"] {
 }
 
 /*
- * Addresses box sizing set to content-box in IE8/9
+ * 1. Addresses box sizing set to content-box in IE8/9
+ * 2. Addresses excess padding in IE8/9
  */
 
 input[type="checkbox"],
 input[type="radio"] {
-    box-sizing: border-box;
+    box-sizing: border-box; /* 1 */
+    padding: 0; /* 2 */
 }
 
 /*

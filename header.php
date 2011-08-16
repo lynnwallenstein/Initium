@@ -69,13 +69,9 @@
   <link rel="profile" href="http://gmpg.org/xfn/11" />
   <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 
-
-  <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
-
   <!-- All JavaScript at the bottom, except for Modernizr and Respond.
      Modernizr enables HTML5 elements & feature detects; Respond is a polyfill for min/max-width CSS3 Media Queries -->
-  <script src="<?php bloginfo('template_url'); ?>/js/libs/modernizr-2.0.min.js"></script>
-  <script src="<?php bloginfo('template_url'); ?>/js/libs/respond.min.js"></script>
+  <script src="<?php bloginfo('template_url'); ?>/js/libs/modernizr-2.0.6.min.js"></script>
 
   <?php
     /* We add some JavaScript to pages with the comment form
@@ -110,4 +106,4 @@
       </nav><!-- #access -->
     </header>
 
-    <div id="main" role="main">
+    <div id="main">

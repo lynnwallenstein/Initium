@@ -1,11 +1,13 @@
-/* =============================================================================
-   Non-semantic helper classes from HTML5 Boilerplate Converted to Mixins
+/* ==|== non-semantic helper classes ========================================
+   Please define your styles before this section.
    ========================================================================== */
 
-/* @include ir : For image replacement */
+/* For image replacement */
 
 @mixin ir {
+  background-color: transparent;
   background-repeat: no-repeat;
+  border: 0;
   direction: ltr;
   display: block;
   overflow: hidden;
@@ -17,14 +19,14 @@
 }
 
 
-/* @include hidden : Hide for both screenreaders and browsers: css-discuss.incutio.com/wiki/Screenreader_Visibility */
+/* Hide for both screenreaders and browsers: h5bp.com/m */
 
 @mixin hidden {
   display: none;
   visibility: hidden;
 }
 
-/* @include visuallyhidden : Hide only visually, but have it available for screenreaders: by Jon Neal. www.webaim.org/techniques/css/invisiblecontent/  &  j.mp/visuallyhidden */
+/* Hide only visually, but have it available for screenreaders: h5bp.com/n  & h5bp.com/o */
 
 @mixin visuallyhidden {
   border: 0;
@@ -35,6 +37,7 @@
   padding: 0;
   position: absolute;
   width: 1px;
+  /* Extends the .visuallyhidden class to allow the element to be focusable when navigated to via the keyboard: h5bp.com/p */
   &.focusable {
     &:active, &:focus {
        clip: auto;
@@ -47,13 +50,12 @@
   }
 }
 
-/* @include invisible : Hide visually and from screenreaders, but maintain layout */
-
+/* Hide visually and from screenreaders, but maintain layout */
 @mixin invisible {
   visibility: hidden;
 }
 
-/* @include clearfix : Contain floats: nicolasgallagher.com/micro-clearfix-hack/ */
+/* Contain floats: h5bp.com/q */
 @mixin clearfix {
   zoom: 1;
   &:after, &:before {
@@ -64,4 +66,3 @@
     clear: both;
   }
 }
-

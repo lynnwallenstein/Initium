@@ -14,8 +14,7 @@
 
 get_header(); ?>
 
-    <div id="primary">
-      <div id="content" role="main">
+      <section id="content" role="main">
 
         <?php the_post(); ?>
 
@@ -23,7 +22,6 @@ get_header(); ?>
 
         <?php comments_template( '', true ); ?>
 
-      </div><!-- #content -->
-    </div><!-- #primary -->
+      </section><!-- #content -->
 
 <?php get_footer(); ?>

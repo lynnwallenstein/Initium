@@ -19,8 +19,7 @@ wp_enqueue_script( 'initium-showcase', get_template_directory_uri() . '/js/showc
 
 get_header(); ?>
 
-    <div id="primary" class="showcase">
-      <div id="content" role="main">
+      <section id="content" role="main"  class="showcase">
 
         <?php the_post(); ?>
 
@@ -214,7 +213,6 @@ get_header(); ?>
           <?php endif; // end sidebar widget area ?>
         </div><!-- .widget-area -->
 
-      </div><!-- #content -->
-    </div><!-- #primary -->
+      </section><!-- #content -->
 
 <?php get_footer(); ?>

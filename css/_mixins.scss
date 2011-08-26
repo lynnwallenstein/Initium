@@ -57,7 +57,7 @@
 
 /* Contain floats: h5bp.com/q */
 @mixin clearfix {
-  zoom: 1;
+  *zoom: 1;
   &:after, &:before {
      content: "";
      display: table;

@@ -88,11 +88,6 @@ function initium_theme_options_add_page() {
     return;
 
   $help = '<p>' . __( 'Some themes provide customization options that are grouped together on a Theme Options screen. If you change themes, options may change or disappear, as they are theme-specific. Your current theme, Initium, provides the following Theme Options:', 'initium' ) . '</p>' .
-      '<ol>' .
-        '<li>' . __( '<strong>Color Scheme</strong>: You can choose a color palette of "Light" (light background with dark text) or "Dark" (dark background with light text) for your site.', 'initium' ) . '</li>' .
-        '<li>' . __( '<strong>Link Color</strong>: You can choose the color used for text links on your site. You can enter the HTML color or hex code, or you can choose visually by clicking the "Select a Color" button to pick from a color wheel.', 'initium' ) . '</li>' .
-        '<li>' . __( '<strong>Default Layout</strong>: You can choose if you want your site&#8217;s default layout to have a sidebar on the left, the right, or not at all.', 'initium' ) . '</li>' .
-      '</ol>' .
       '<p>' . __( 'Remember to click "Save Changes" to save any changes you have made to the theme options.', 'initium' ) . '</p>' .
       '<p><strong>' . __( 'For more information:', 'initium' ) . '</strong></p>' .
       '<p>' . __( '<a href="http://codex.wordpress.org/Appearance_Theme_Options_Screen" target="_blank">Documentation on Theme Options</a>', 'initium' ) . '</p>' .
@@ -102,56 +97,6 @@ function initium_theme_options_add_page() {
 }
 add_action( 'admin_menu', 'initium_theme_options_add_page' );
 
-/**
- * Returns an array of color schemes registered for Twenty Eleven.
- *
- * @since Twenty Eleven 1.0
- */
-function initium_color_schemes() {
-  $color_scheme_options = array(
-    'light' => array(
-      'value' => 'light',
-      'label' => __( 'Light', 'initium' ),
-      'thumbnail' => get_template_directory_uri() . '/inc/images/light.png',
-      'default_link_color' => '#1b8be0',
-    ),
-    'dark' => array(
-      'value' => 'dark',
-      'label' => __( 'Dark', 'initium' ),
-      'thumbnail' => get_template_directory_uri() . '/inc/images/dark.png',
-      'default_link_color' => '#e4741f',
-    ),
-  );
-
-  return apply_filters( 'initium_color_schemes', $color_scheme_options );
-}
-
-/**
- * Returns an array of layout options registered for Twenty Eleven.
- *
- * @since Twenty Eleven 1.0
- */
-function initium_layouts() {
-  $layout_options = array(
-    'content-sidebar' => array(
-      'value' => 'content-sidebar',
-      'label' => __( 'Content on left', 'initium' ),
-      'thumbnail' => get_template_directory_uri() . '/inc/images/content-sidebar.png',
-    ),
-    'sidebar-content' => array(
-      'value' => 'sidebar-content',
-      'label' => __( 'Content on right', 'initium' ),
-      'thumbnail' => get_template_directory_uri() . '/inc/images/sidebar-content.png',
-    ),
-    'content' => array(
-      'value' => 'content',
-      'label' => __( 'One-column, no sidebar', 'initium' ),
-      'thumbnail' => get_template_directory_uri() . '/inc/images/content.png',
-    ),
-  );
-
-  return apply_filters( 'initium_layouts', $layout_options );
-}
 
 /**
  * Returns the default options for Twenty Eleven.
@@ -159,37 +104,7 @@ function initium_layouts() {
  * @since Twenty Eleven 1.0
  */
 function initium_get_default_theme_options() {
-  $default_theme_options = array(
-    'color_scheme' => 'light',
-    'link_color'   => initium_get_default_link_color( 'light' ),
-    'theme_layout' => 'content-sidebar',
-  );
-
-  if ( is_rtl() )
-    $default_theme_options['theme_layout'] = 'sidebar-content';
-
   return apply_filters( 'initium_default_theme_options', $default_theme_options );
-}
-
-/**
- * Returns the default link color for Twenty Eleven, based on color scheme.
- *
- * @since Twenty Eleven 1.0
- *
- * @param $string $color_scheme Color scheme. Defaults to the active color scheme.
- * @return $string Color.
-*/
-function initium_get_default_link_color( $color_scheme = null ) {
-  if ( null === $color_scheme ) {
-    $options = initium_get_theme_options();
-    $color_scheme = $options['color_scheme'];
-  }
-
-  $color_schemes = initium_color_schemes();
-  if ( ! isset( $color_schemes[ $color_scheme ] ) )
-    return false;
-
-  return $color_schemes[ $color_scheme ]['default_link_color'];
 }
 
 /**
@@ -220,67 +135,6 @@ function theme_options_render_page() {
         $default_options = initium_get_default_theme_options();
       ?>
 
-      <table class="form-table">
-
-        <tr valign="top" class="image-radio-option color-scheme"><th scope="row"><?php _e( 'Color Scheme', 'initium' ); ?></th>
-          <td>
-            <fieldset><legend class="screen-reader-text"><span><?php _e( 'Color Scheme', 'initium' ); ?></span></legend>
-            <?php
-              foreach ( initium_color_schemes() as $scheme ) {
-                ?>
-                <div class="layout">
-                <label class="description">
-                  <input type="radio" name="initium_theme_options[color_scheme]" value="<?php echo esc_attr( $scheme['value'] ); ?>" <?php checked( $options['color_scheme'], $scheme['value'] ); ?> />
-                  <input type="hidden" id="default-color-<?php echo esc_attr( $scheme['value'] ); ?>" value="<?php echo esc_attr( $scheme['default_link_color'] ); ?>" />
-                  <span>
-                    <img src="<?php echo esc_url( $scheme['thumbnail'] ); ?>" width="136" height="122" alt="" />
-                    <?php echo $scheme['label']; ?>
-                  </span>
-                </label>
-                </div>
-                <?php
-              }
-            ?>
-            </fieldset>
-          </td>
-        </tr>
-
-        <tr valign="top"><th scope="row"><?php _e( 'Link Color', 'initium' ); ?></th>
-          <td>
-            <fieldset><legend class="screen-reader-text"><span><?php _e( 'Link Color', 'initium' ); ?></span></legend>
-              <input type="text" name="initium_theme_options[link_color]" id="link-color" value="<?php echo esc_attr( $options['link_color'] ); ?>" />
-              <a href="#" class="pickcolor hide-if-no-js" id="link-color-example"></a>
-              <input type="button" class="pickcolor button hide-if-no-js" value="<?php esc_attr_e( 'Select a Color', 'initium' ); ?>" />
-              <div id="colorPickerDiv" style="z-index: 100; background:#eee; border:1px solid #ccc; position:absolute; display:none;"></div>
-              <br />
-              <span><?php printf( __( 'Default color: %s', 'initium' ), '<span id="default-color">' . initium_get_default_link_color( $options['color_scheme'] ) . '</span>' ); ?></span>
-            </fieldset>
-          </td>
-        </tr>
-
-        <tr valign="top" class="image-radio-option theme-layout"><th scope="row"><?php _e( 'Default Layout', 'initium' ); ?></th>
-          <td>
-            <fieldset><legend class="screen-reader-text"><span><?php _e( 'Color Scheme', 'initium' ); ?></span></legend>
-            <?php
-              foreach ( initium_layouts() as $layout ) {
-                ?>
-                <div class="layout">
-                <label class="description">
-                  <input type="radio" name="initium_theme_options[theme_layout]" value="<?php echo esc_attr( $layout['value'] ); ?>" <?php checked( $options['theme_layout'], $layout['value'] ); ?> />
-                  <span>
-                    <img src="<?php echo esc_url( $layout['thumbnail'] ); ?>" width="136" height="122" alt="" />
-                    <?php echo $layout['label']; ?>
-                  </span>
-                </label>
-                </div>
-                <?php
-              }
-            ?>
-            </fieldset>
-          </td>
-        </tr>
-      </table>
-
       <?php submit_button(); ?>
     </form>
   </div>
@@ -298,111 +152,5 @@ function theme_options_render_page() {
 function initium_theme_options_validate( $input ) {
   $output = $defaults = initium_get_default_theme_options();
 
-  // Color scheme must be in our array of color scheme options
-  if ( isset( $input['color_scheme'] ) && array_key_exists( $input['color_scheme'], initium_color_schemes() ) )
-    $output['color_scheme'] = $input['color_scheme'];
-
-  // Our defaults for the link color may have changed, based on the color scheme.
-  $output['link_color'] = $defaults['link_color'] = initium_get_default_link_color( $output['color_scheme'] );
-
-  // Link color must be 3 or 6 hexadecimal characters
-  if ( isset( $input['link_color'] ) && preg_match( '/^#?([a-f0-9]{3}){1,2}$/i', $input['link_color'] ) )
-    $output['link_color'] = '#' . strtolower( ltrim( $input['link_color'], '#' ) );
-
-  // Theme layout must be in our array of theme layout options
-  if ( isset( $input['theme_layout'] ) && array_key_exists( $input['theme_layout'], initium_layouts() ) )
-    $output['theme_layout'] = $input['theme_layout'];
-
   return apply_filters( 'initium_theme_options_validate', $output, $input, $defaults );
 }
-
-/**
- * Enqueue the styles for the current color scheme.
- *
- * @since Twenty Eleven 1.0
- */
-function initium_enqueue_color_scheme() {
-  $options = initium_get_theme_options();
-  $color_scheme = $options['color_scheme'];
-
-  if ( 'dark' == $color_scheme )
-    wp_enqueue_style( 'dark', get_template_directory_uri() . '/colors/dark.css', array(), null );
-
-  do_action( 'initium_enqueue_color_scheme', $color_scheme );
-}
-add_action( 'wp_enqueue_scripts', 'initium_enqueue_color_scheme' );
-
-/**
- * Add a style block to the theme for the current link color.
- *
- * This function is attached to the wp_head action hook.
- *
- * @since Twenty Eleven 1.0
- */
-function initium_print_link_color_style() {
-  $options = initium_get_theme_options();
-  $link_color = $options['link_color'];
-
-  $default_options = initium_get_default_theme_options();
-
-  // Don't do anything if the current link color is the default.
-  if ( $default_options['link_color'] == $link_color )
-    return;
-?>
-  <style>
-    /* Link color */
-    a,
-    #site-title a:focus,
-    #site-title a:hover,
-    #site-title a:active,
-    .entry-title a:hover,
-    .entry-title a:focus,
-    .entry-title a:active,
-    .widget_initium_ephemera .comments-link a:hover,
-    section.recent-posts .other-recent-posts a[rel="bookmark"]:hover,
-    section.recent-posts .other-recent-posts .comments-link a:hover,
-    .format-image footer.entry-meta a:hover,
-    #site-generator a:hover {
-      color: <?php echo $link_color; ?>;
-    }
-    section.recent-posts .other-recent-posts .comments-link a:hover {
-      border-color: <?php echo $link_color; ?>;
-    }
-    article.feature-image.small .entry-summary p a:hover,
-    .entry-header .comments-link a:hover,
-    .entry-header .comments-link a:focus,
-    .entry-header .comments-link a:active,
-    .feature-slider a.active {
-      background-color: <?php echo $link_color; ?>;
-    }
-  </style>
-<?php
-}
-add_action( 'wp_head', 'initium_print_link_color_style' );
-
-/**
- * Adds Twenty Eleven layout classes to the array of body classes.
- *
- * @since Twenty Eleven 1.0
- */
-function initium_layout_classes( $existing_classes ) {
-  $options = initium_get_theme_options();
-  $current_layout = $options['theme_layout'];
-
-  if ( in_array( $current_layout, array( 'content-sidebar', 'sidebar-content' ) ) )
-    $classes = array( 'two-column' );
-  else
-    $classes = array( 'one-column' );
-
-  if ( 'content-sidebar' == $current_layout )
-    $classes[] = 'right-sidebar';
-  elseif ( 'sidebar-content' == $current_layout )
-    $classes[] = 'left-sidebar';
-  else
-    $classes[] = $current_layout;
-
-  $classes = apply_filters( 'initium_layout_classes', $classes, $current_layout );
-
-  return array_merge( $existing_classes, $classes );
-}
-add_filter( 'body_class', 'initium_layout_classes' );

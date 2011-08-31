@@ -17,7 +17,7 @@ class Initium_Ephemera_Widget extends WP_Widget {
    **/
   function Initium_Ephemera_Widget() {
     $widget_ops = array( 'classname' => 'widget_initium_ephemera', 'description' => __( 'Use this widget to list your recent Aside, Status, Quote, and Link posts', 'initium' ) );
-    $this->WP_Widget( 'widget_initium_ephemera', __( 'Twenty Eleven Ephemera', 'initium' ), $widget_ops );
+    $this->WP_Widget( 'widget_initium_ephemera', __( 'Initium Ephemera', 'initium' ), $widget_ops );
     $this->alt_option_name = 'widget_initium_ephemera';
 
     add_action( 'save_post', array(&$this, 'flush_widget_cache' ) );

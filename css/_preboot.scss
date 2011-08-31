@@ -1,0 +1,155 @@
+/* Preboot.scss
+ * Variables and mixins to pre-ignite theme
+ * ------------------------------------------------------------------ */
+
+/* VARIABLES */
+
+// Paths
+$imgPath:          /images/;
+
+// Links
+$linkColor:         #0069d6;
+$linkColorHover:    darken($linkColor, 10);
+
+// Grays
+$black:             #000;
+$grayDark:          lighten($black, 25%);
+$gray:              lighten($black, 50%);
+$grayLight:         lighten($black, 75%);
+$grayLighter:       lighten($black, 90%);
+$white:             #fff;
+
+// Accent Colors
+$blue:              #049CDB;
+$blueDark:          #0064CD;
+$green:             #46a546;
+$red:               #9d261d;
+$yellow:            #ffc40d;
+$orange:            #f89406;
+$pink:              #c3325f;
+$purple:            #7a43b6;
+
+// Baseline
+$basefont:          13px;
+$baseline:          18px;
+
+// Color Scheme
+$baseColor:         $blue;                  // Set a base color
+$complement:        complement($baseColor);  // Determine a complementary color
+$grayscale:         grayscale($baseColor);
+
+$split1:            adjust-hue($baseColor, 158deg);  // Split complements
+$split2:            adjust-hue($baseColor, -158deg);
+$triad1:            adjust-hue($baseColor, 135deg);  // Triads colors
+$triad2:            adjust-hue($baseColor, -135deg);
+$tetra1:            adjust-hue($baseColor, 90deg);   // Tetra colors
+$tetra2:            adjust-hue($baseColor, -90deg);
+$analog1:           adjust-hue($baseColor, 22deg);   // Analogs colors
+$analog2:           adjust-hue($baseColor, -22deg);
+
+
+// Font Stacks
+
+@mixin font-stackshorthand($weight: normal, $size: 14px, $lineHeight: 20px) {
+  font-size: $size;
+  font-weight: $weight;
+  line-height: $lineHeight;
+}
+@mixin font-stacksans-serif($weight: normal, $size: 14px, $lineHeight: 20px) {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: $size;
+  font-weight: $weight;
+  line-height: $lineHeight;
+}
+@mixin font-stackserif($weight: normal, $size: 14px, $lineHeight: 20px) {
+  font-family: "Georgia", Times New Roman, Times, serif;
+  font-size: $size;
+  font-weight: $weight;
+  line-height: $lineHeight;
+}
+@mixin font-stack_monospace($weight: normal, $size: 12px, $lineHeight: 20px) {
+  font-family: "Monaco", Courier New, monospace;
+  font-size: $size;
+  font-weight: $weight;
+  line-height: $lineHeight;
+}
+
+
+
+/* MIXINS */
+
+/* ==|== non-semantic helper classes ========================================
+   Please define your styles before this section.
+   ========================================================================== */
+
+/* Center-align a block level element */
+
+@mixin center-block {
+  display: block;
+  margin: 0 auto;
+}
+
+/* For image replacement */
+
+@mixin ir {
+  background-color: transparent;
+  background-repeat: no-repeat;
+  border: 0;
+  direction: ltr;
+  display: block;
+  overflow: hidden;
+  text-align: left;
+  text-indent: -999em;
+  & br {
+    display: none;
+  }
+}
+
+
+/* Hide for both screenreaders and browsers: h5bp.com/m */
+
+@mixin hidden {
+  display: none;
+  visibility: hidden;
+}
+
+/* Hide only visually, but have it available for screenreaders: h5bp.com/n  & h5bp.com/o */
+
+@mixin visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  /* Extends the .visuallyhidden class to allow the element to be focusable when navigated to via the keyboard: h5bp.com/p */
+  &.focusable {
+    &:active, &:focus {
+       clip: auto;
+       height: auto;
+       margin: 0;
+       overflow: visible;
+       position: static;
+       width: auto;
+    }
+  }
+}
+
+/* Hide visually and from screenreaders, but maintain layout */
+@mixin invisible {
+  visibility: hidden;
+}
+
+/* Contain floats: h5bp.com/q */
+@mixin clearfix {
+  *zoom: 1;
+  &:after, &:before {
+     content: "";
+     display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}

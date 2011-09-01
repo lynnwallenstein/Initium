@@ -1,95 +1,588 @@
+@charset "UTF-8";
 /*
-Syntax error: Invalid CSS after "...       /images/": expected expression (e.g. 1px, bold), was ";"
-        on line 8 of css/_preboot.scss
-        from line 8 of css/style.scss
+ * HTML5 ✰ Boilerplate (SCSS Edition)
+ *
+ */
+@-webkit-keyframes fade-in {
+  0% {
+    opacity: 0; }
 
-3:  * ------------------------------------------------------------------ */
-4: 
-5: /* VARIABLES */
-6: 
-7: // Paths
-8: $imgPath:          /images/;
-9: 
-10: // Links
-11: $linkColor:         #0069d6;
-12: $linkColorHover:    darken($linkColor, 10);
-13: 
+  100% {
+    opacity: 1; } }
 
-Backtrace:
-css/_preboot.scss:8
-css/style.scss:8
-/home/lynnwallenstein/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.1.7/lib/sass/scss/parser.rb:898:in `expected'
-/home/lynnwallenstein/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.1.7/lib/sass/script/lexer.rb:193:in `expected!'
-/home/lynnwallenstein/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.1.7/lib/sass/script/parser.rb:443:in `assert_expr'
-(eval):7:in `times_div_or_mod'
-(eval):3:in `plus_or_minus'
-(eval):3:in `relational'
-(eval):3:in `eq_or_neq'
-(eval):3:in `and_expr'
-(eval):3:in `or_expr'
-/home/lynnwallenstein/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.1.7/lib/sass/script/parser.rb:266:in `space'
-/home/lynnwallenstein/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.1.7/lib/sass/script/parser.rb:251:in `interpolation'
-/home/lynnwallenstein/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.1.7/lib/sass/script/parser.rb:217:in `expr'
-/home/lynnwallenstein/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.1.7/lib/sass/script/parser.rb:442:in `assert_expr'
-/home/lynnwallenstein/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.1.7/lib/sass/script/parser.rb:49:in `parse'
-/home/lynnwallenstein/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.1.7/lib/sass/scss/parser.rb:788:in `sass_script'
-/home/lynnwallenstein/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.1.7/lib/sass/scss/parser.rb:336:in `variable'
-/home/lynnwallenstein/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.1.7/lib/sass/scss/parser.rb:379:in `block_child'
-/home/lynnwallenstein/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.1.7/lib/sass/scss/parser.rb:369:in `block_contents'
-/home/lynnwallenstein/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.1.7/lib/sass/scss/parser.rb:57:in `stylesheet'
-/home/lynnwallenstein/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.1.7/lib/sass/scss/parser.rb:26:in `parse'
-/home/lynnwallenstein/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.1.7/lib/sass/engine.rb:320:in `_to_tree'
-/home/lynnwallenstein/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.1.7/lib/sass/engine.rb:252:in `to_tree'
-/home/lynnwallenstein/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.1.7/lib/sass/tree/visitors/perform.rb:144:in `visit_import'
-/home/lynnwallenstein/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.1.7/lib/sass/tree/visitors/base.rb:37:in `visit'
-/home/lynnwallenstein/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.1.7/lib/sass/tree/visitors/perform.rb:18:in `visit'
-/home/lynnwallenstein/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.1.7/lib/sass/tree/visitors/base.rb:53:in `block in visit_children'
-/home/lynnwallenstein/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.1.7/lib/sass/tree/visitors/base.rb:53:in `map'
-/home/lynnwallenstein/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.1.7/lib/sass/tree/visitors/base.rb:53:in `visit_children'
-/home/lynnwallenstein/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.1.7/lib/sass/tree/visitors/perform.rb:27:in `block in visit_children'
-/home/lynnwallenstein/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.1.7/lib/sass/tree/visitors/perform.rb:39:in `with_environment'
-/home/lynnwallenstein/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.1.7/lib/sass/tree/visitors/perform.rb:26:in `visit_children'
-/home/lynnwallenstein/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.1.7/lib/sass/tree/visitors/base.rb:37:in `block in visit'
-/home/lynnwallenstein/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.1.7/lib/sass/tree/visitors/perform.rb:47:in `visit_root'
-/home/lynnwallenstein/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.1.7/lib/sass/tree/visitors/base.rb:37:in `visit'
-/home/lynnwallenstein/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.1.7/lib/sass/tree/visitors/perform.rb:18:in `visit'
-/home/lynnwallenstein/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.1.7/lib/sass/tree/visitors/perform.rb:7:in `visit'
-/home/lynnwallenstein/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.1.7/lib/sass/tree/root_node.rb:20:in `render'
-/home/lynnwallenstein/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.1.7/lib/sass/engine.rb:293:in `_render'
-/home/lynnwallenstein/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.1.7/lib/sass/engine.rb:240:in `render'
-/home/lynnwallenstein/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.1.7/lib/sass/plugin/compiler.rb:319:in `update_stylesheet'
-/home/lynnwallenstein/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.1.7/lib/sass/plugin/compiler.rb:181:in `block (2 levels) in update_stylesheets'
-/home/lynnwallenstein/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.1.7/lib/sass/plugin/compiler.rb:175:in `each'
-/home/lynnwallenstein/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.1.7/lib/sass/plugin/compiler.rb:175:in `block in update_stylesheets'
-/home/lynnwallenstein/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.1.7/lib/sass/plugin/compiler.rb:173:in `each'
-/home/lynnwallenstein/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.1.7/lib/sass/plugin/compiler.rb:173:in `update_stylesheets'
-/home/lynnwallenstein/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.1.7/lib/sass/plugin/compiler.rb:252:in `block (4 levels) in watch'
-/home/lynnwallenstein/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.1.7/vendor/fssm/lib/fssm/path.rb:73:in `call'
-/home/lynnwallenstein/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.1.7/vendor/fssm/lib/fssm/path.rb:73:in `run_callback'
-/home/lynnwallenstein/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.1.7/vendor/fssm/lib/fssm/path.rb:55:in `callback_action'
-/home/lynnwallenstein/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.1.7/vendor/fssm/lib/fssm/path.rb:35:in `update'
-/home/lynnwallenstein/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.1.7/vendor/fssm/lib/fssm/state/directory.rb:39:in `block in modified'
-/home/lynnwallenstein/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.1.7/vendor/fssm/lib/fssm/state/directory.rb:37:in `each'
-/home/lynnwallenstein/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.1.7/vendor/fssm/lib/fssm/state/directory.rb:37:in `modified'
-/home/lynnwallenstein/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.1.7/vendor/fssm/lib/fssm/state/directory.rb:18:in `refresh'
-/home/lynnwallenstein/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.1.7/vendor/fssm/lib/fssm/backends/polling.rb:17:in `block (2 levels) in run'
-/home/lynnwallenstein/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.1.7/vendor/fssm/lib/fssm/backends/polling.rb:17:in `each'
-/home/lynnwallenstein/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.1.7/vendor/fssm/lib/fssm/backends/polling.rb:17:in `block in run'
-/home/lynnwallenstein/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.1.7/vendor/fssm/lib/fssm/backends/polling.rb:15:in `loop'
-/home/lynnwallenstein/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.1.7/vendor/fssm/lib/fssm/backends/polling.rb:15:in `run'
-/home/lynnwallenstein/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.1.7/vendor/fssm/lib/fssm/monitor.rb:26:in `run'
-/home/lynnwallenstein/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.1.7/vendor/fssm/lib/fssm.rb:20:in `monitor'
-/home/lynnwallenstein/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.1.7/lib/sass/plugin/compiler.rb:245:in `watch'
-/home/lynnwallenstein/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.1.7/lib/sass/plugin.rb:111:in `method_missing'
-/home/lynnwallenstein/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.1.7/lib/sass/exec.rb:408:in `watch_or_update'
-/home/lynnwallenstein/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.1.7/lib/sass/exec.rb:294:in `process_result'
-/home/lynnwallenstein/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.1.7/lib/sass/exec.rb:41:in `parse'
-/home/lynnwallenstein/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.1.7/lib/sass/exec.rb:21:in `parse!'
-/home/lynnwallenstein/.rvm/gems/ruby-1.9.2-p180/gems/sass-3.1.7/bin/sass:8:in `<top (required)>'
-/home/lynnwallenstein/.rvm/gems/ruby-1.9.2-p180/bin/sass:19:in `load'
-/home/lynnwallenstein/.rvm/gems/ruby-1.9.2-p180/bin/sass:19:in `<main>'
+@-moz-keyframes fade-in {
+  0% {
+    opacity: 0; }
+
+  100% {
+    opacity: 1; } }
+
+@keyframes fade-in {
+  0% {
+    opacity: 0; }
+
+  100% {
+    opacity: 1; } }
+
+@-webkit-keyframes fade-out {
+  0% {
+    opacity: 1; }
+
+  100% {
+    opacity: 0; } }
+
+@-moz-keyframes fade-out {
+  0% {
+    opacity: 1; }
+
+  100% {
+    opacity: 0; } }
+
+@keyframes fade-out {
+  0% {
+    opacity: 1; }
+
+  100% {
+    opacity: 0; } }
+
+/*
+ * Marcotte Grid System v1.0
+ * Learn More: https://github.com/lynnwallenstein/Marcotte-Grid
+ * Licensed under GPL and MIT.
 */
-body:before {
+/*  Default Layout: 960px  */
+/* Preboot.scss
+ * Variables and mixins to pre-ignite theme
+ * ------------------------------------------------------------------ */
+/* VARIABLES */
+/* MIXINS */
+/* ==|== non-semantic helper classes ========================================
+   Please define your styles before this section.
+   ========================================================================== */
+/* Center-align a block level element */
+/* For image replacement */
+/* Hide for both screenreaders and browsers: h5bp.com/m */
+/* Hide only visually, but have it available for screenreaders: h5bp.com/n  & h5bp.com/o */
+/* Hide visually and from screenreaders, but maintain layout */
+/* Contain floats: h5bp.com/q */
+/* normalize.css 2011-08-12T17:28 UTC · http://github.com/necolas/normalize.css */
+/* =============================================================================
+   HTML5 display definitions
+   ========================================================================== */
+/*
+ * Corrects block display not defined in IE6/7/8/9 & FF3
+ */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+nav,
+section {
+  display: block; }
+
+/*
+ * Corrects inline-block display not defined in IE6/7/8/9 & FF3
+ */
+audio,
+canvas,
+video {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1; }
+
+/*
+ * Prevents modern browsers from displaying 'audio' without controls
+ */
+audio:not([controls]) {
+  display: none; }
+
+/*
+ * Addresses styling for 'hidden' attribute not present in IE7/8/9, FF3, S4
+ * Known issue: no IE6 support
+ */
+[hidden] {
+  display: none; }
+
+/* =============================================================================
+   Base
+   ========================================================================== */
+/*
+ * 1. Corrects text resizing oddly in IE6/7 when body font-size is set using em units
+ *    http://clagnut.com/blog/348/#c790
+ * 2. Keeps page centred in all browsers regardless of content height
+ * 3. Prevents iOS text size adjust after orientation change, without disabling user zoom
+ *    www.456bereastreet.com/archive/201012/controlling_text_size_in_safari_for_ios_without_disabling_user_zoom/
+ */
+html {
+  font-size: 100%;
+  /* 1 */
+  overflow-y: scroll;
+  /* 2 */
+  -webkit-text-size-adjust: 100%;
+  /* 3 */
+  -ms-text-size-adjust: 100%;
+  /* 3 */ }
+
+/*
+ * Addresses margins handled incorrectly in IE6/7
+ */
+body {
+  margin: 0; }
+
+/*
+ * Addresses font-family inconsistency between 'textarea' and other form elements.
+ */
+body,
+button,
+input,
+select,
+textarea {
+  font-family: sans-serif; }
+
+/* =============================================================================
+   Links
+   ========================================================================== */
+a {
+  color: #00e; }
+
+a:visited {
+  color: #551a8b; }
+
+/*
+ * Addresses outline displayed oddly in Chrome
+ */
+a:focus {
+  outline: thin dotted; }
+
+/*
+ * Improves readability when focused and also mouse hovered in all browsers
+ * people.opera.com/patrickl/experiments/keyboard/test
+ */
+a:hover,
+a:active {
+  outline: 0; }
+
+/* =============================================================================
+   Typography
+   ========================================================================== */
+/*
+ * Addresses styling not present in IE7/8/9, S5, Chrome
+ */
+abbr[title] {
+  border-bottom: 1px dotted; }
+
+/*
+ * Addresses style set to 'bolder' in FF3/4, S4/5, Chrome
+*/
+b,
+strong {
+  font-weight: bold; }
+
+blockquote {
+  margin: 1em 40px; }
+
+/*
+ * Addresses styling not present in S5, Chrome
+ */
+dfn {
+  font-style: italic; }
+
+/*
+ * Addresses styling not present in IE6/7/8/9
+ */
+mark {
+  background: #ff0;
+  color: #000; }
+
+/*
+ * Corrects font family set oddly in IE6, S4/5, Chrome
+ * en.wikipedia.org/wiki/User:Davidgothberg/Test59
+ */
+pre,
+code,
+kbd,
+samp {
+  font-family: monospace, serif;
+  _font-family: 'courier new', monospace;
+  font-size: 1em; }
+
+/*
+ * Improves readability of pre-formatted text in all browsers
+ */
+pre {
   white-space: pre;
-  font-family: monospace;
-  content: "Syntax error: Invalid CSS after \"...       /images/\": expected expression (e.g. 1px, bold), was \";\"\A         on line 8 of css/_preboot.scss\A         from line 8 of css/style.scss\A \A 3:  * ------------------------------------------------------------------ */\A 4: \A 5: /* VARIABLES */\A 6: \A 7: // Paths\A 8: $imgPath:          /images/;\A 9: \A 10: // Links\A 11: $linkColor:         #0069d6;\A 12: $linkColorHover:    darken($linkColor, 10);\A 13: "; }
+  white-space: pre-wrap;
+  word-wrap: break-word; }
+
+/*
+ * 1. Addresses CSS quotes not supported in IE6/7
+ * 2. Addresses quote property not supported in S4
+ */
+/* 1 */
+q {
+  quotes: none; }
+
+/* 2 */
+q:before,
+q:after {
+  content: '';
+  content: none; }
+
+small {
+  font-size: 75%; }
+
+/*
+ * Prevents sub and sup affecting line-height in all browsers
+ * gist.github.com/413930
+ */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline; }
+
+sup {
+  top: -0.5em; }
+
+sub {
+  bottom: -0.25em; }
+
+/* =============================================================================
+   Lists
+   ========================================================================== */
+ul,
+ol {
+  margin: 1em 0;
+  padding: 0 0 0 40px; }
+
+dd {
+  margin: 0 0 0 40px; }
+
+nav ul,
+nav ol {
+  list-style: none;
+  list-style-image: none; }
+
+/* =============================================================================
+   Embedded content
+   ========================================================================== */
+/*
+ * 1. Removes border when inside 'a' element in IE6/7/8/9
+ * 2. Improves image quality when scaled in IE7
+ *    code.flickr.com/blog/2008/11/12/on-ui-quality-the-little-things-client-side-image-resizing/
+ */
+img {
+  border: 0;
+  /* 1 */
+  -ms-interpolation-mode: bicubic;
+  /* 2 */ }
+
+/*
+ * Corrects overflow displayed oddly in IE9
+ */
+svg:not(:root) {
+  overflow: hidden; }
+
+/* =============================================================================
+   Figures
+   ========================================================================== */
+/*
+ * Addresses margin not present in IE6/7/8/9, S5, O11
+ */
+figure {
+  margin: 0; }
+
+/* =============================================================================
+   Forms
+   ========================================================================== */
+/*
+ * Corrects margin displayed oddly in IE6/7
+ */
+form {
+  margin: 0; }
+
+/*
+ * Define consistent margin and padding
+ */
+fieldset {
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em; }
+
+/*
+ * 1. Corrects color not being inherited in IE6/7/8/9
+ * 2. Corrects alignment displayed oddly in IE6/7
+ */
+legend {
+  border: 0;
+  /* 1 */
+  *margin-left: -7px;
+  /* 2 */ }
+
+/*
+ * 1. Corrects font size not being inherited in all browsers
+ * 2. Addresses margins set differently in IE6/7, F3/4, S5, Chrome
+ * 3. Improves appearance and consistency in all browsers
+ */
+button,
+input,
+select,
+textarea {
+  font-size: 100%;
+  /* 1 */
+  margin: 0;
+  /* 2 */
+  vertical-align: baseline;
+  /* 3 */
+  *vertical-align: middle;
+  /* 3 */ }
+
+/*
+ * 1. Addresses FF3/4 setting line-height using !important in the UA stylesheet
+ * 2. Corrects inner spacing displayed oddly in IE6/7
+ */
+button,
+input {
+  line-height: normal;
+  /* 1 */
+  *overflow: visible;
+  /* 2 */ }
+
+/*
+ * Corrects overlap and whitespace issue for buttons and inputs in IE6/7
+ * Known issue: reintroduces inner spacing
+ */
+table button,
+table input {
+  *overflow: auto; }
+
+/*
+ * 1. Improves usability and consistency of cursor style between image-type 'input' and others
+ * 2. Corrects inability to style clickable 'input' types in iOS
+ */
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  cursor: pointer;
+  /* 1 */
+  -webkit-appearance: button;
+  /* 2 */ }
+
+/*
+ * 1. Addresses box sizing set to content-box in IE8/9
+ * 2. Addresses excess padding in IE8/9
+ */
+input[type="checkbox"],
+input[type="radio"] {
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */ }
+
+/*
+ * 1. Addresses appearance set to searchfield in S5, Chrome
+ * 2. Addresses box sizing set to border-box in S5, Chrome (include -moz to future-proof)
+ */
+input[type="search"] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  /* 2 */
+  box-sizing: content-box; }
+
+/*
+ * Corrects inner padding displayed oddly in S5, Chrome on OSX
+ */
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none; }
+
+/*
+ * Corrects inner padding and border displayed oddly in FF3/4
+ * www.sitepen.com/blog/2008/05/14/the-devils-in-the-details-fixing-dojos-toolbar-buttons/
+ */
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0; }
+
+/*
+ * 1. Removes default vertical scrollbar in IE6/7/8/9
+ * 2. Improves readability and alignment in all browsers
+ */
+textarea {
+  overflow: auto;
+  /* 1 */
+  vertical-align: top;
+  /* 2 */ }
+
+/* =============================================================================
+   Tables
+   ========================================================================== */
+/*
+ * Remove most spacing between table cells
+ */
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+/*
+ * HTML5 Boilerplate
+ *
+ */
+/* =============================================================================
+   Base
+   ========================================================================== */
+/*
+ * 1. Correct text resizing oddly in IE6/7 when body font-size is set using em units
+ * 2. Force vertical scrollbar in non-IE
+ * 3. Prevent iOS text size adjust on device orientation change, without disabling user zoom: h5bp.com/g
+ */
+body {
+  font-size: 13px;
+  line-height: 1.231; }
+
+body, button, input, select, textarea {
+  color: #222; }
+
+/*
+ * Remove text-shadow in selection highlight: h5bp.com/i
+ * These selection declarations have to be separate
+ * Also: hot pink! (or customize the background color to match your design)
+ */
+::-moz-selection {
+  background: #fe57a1;
+  color: #fff;
+  text-shadow: none; }
+
+::selection {
+  background: #fe57a1;
+  color: #fff;
+  text-shadow: none; }
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0; }
+
+ins {
+  background: #ff9;
+  color: #000;
+  text-decoration: none; }
+
+mark {
+  font-style: italic;
+  font-weight: bold; }
+
+small {
+  font-size: 85%; }
+
+nav ul, nav ol {
+  margin: 0;
+  padding: 0; }
+
+img {
+  vertical-align: middle; }
+
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0; }
+
+legend {
+  padding: 0; }
+
+label {
+  cursor: pointer; }
+
+textarea {
+  resize: vertical; }
+
+/* Colors for form validity */
+input:invalid, textarea:invalid {
+  background-color: #f0dddd; }
+
+table td {
+  vertical-align: top; }
+
+/* Wordpress generates these css classes and ids. */
+aside * ul {
+  list-style-type: none;
+  color: #666666; }
+
+.alignleft {
+  float: left; }
+
+.alignright {
+  float: right; }
+
+/* =============================================================================
+   Primary styles
+   Author:
+   ========================================================================== */
+/* =============================================================================
+   PLACEHOLDER Media Queries for Responsive Design.
+   These override the primary ('mobile first') styles
+   Modify as content requires.
+   ========================================================================== */
+@media only screen and (min-width: 480px) {
+  /* Style adjustments for viewports 480px and over go here */ }
+@media only screen and (min-width: 768px) {
+  /* Style adjustments for viewports 768px and over go here */ }
+/* ==|== print styles =======================================================
+   Print styles.
+   Inlined to avoid required HTTP connection: h5bp.com/r
+   ========================================================================== */
+@media print {
+  * {
+    background: transparent !important;
+    color: black !important;
+    text-shadow: none !important;
+    filter: none !important;
+    -ms-filter: none !important; }
+
+  /* Black prints faster: h5bp.com/s */
+  a, a:visited {
+    text-decoration: underline; }
+
+  a[href]:after {
+    content: " (" attr(href) ")"; }
+
+  abbr[title]:after {
+    content: " (" attr(title) ")"; }
+
+  .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after {
+    content: ""; }
+
+  /* Don't show links for images, or javascript/internal links */
+  pre, blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid; }
+
+  thead {
+    display: table-header-group; }
+
+  /* h5bp.com/t */
+  tr, img {
+    page-break-inside: avoid; }
+
+  img {
+    max-width: 100% !important; }
+
+  @page {
+    margin: 0.5cm; }
+
+  p, h2, h3 {
+    orphans: 3;
+    widows: 3; }
+
+  h2, h3 {
+    page-break-after: avoid; } }

@@ -1,0 +1,10 @@
+***********************************************************
+Initium Theme
+***********************************************************
+
+Boilerplate wordpress theme created using the following components/practices/concepts
+
+* Responsive/Semantic Grid - https://github.com/lynnwallenstein/Marcotte-Grid
+* HTML5Boiletplate - https://github.com/paulirish/html5-boilerplate
+
+Sass & Bourbon

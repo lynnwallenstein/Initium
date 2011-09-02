@@ -16,6 +16,7 @@
    ========================================================================== */
 
 body {
+  @include grid_container;
   .home {
   }
   .blog {
@@ -40,11 +41,17 @@ body {
       }
     }
     div#main {
-      article {
-        header {
+      section#content {
+        @include grid(16);
+        float: left;
+        article {
+          header {
+          }
         }
       }
-      div#sidebar {
+      section#secondary {
+        @include grid(8);
+        float: right;
       }
     }
     footer#page-footer {

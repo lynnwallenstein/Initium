@@ -528,6 +528,29 @@ aside * ul {
    Primary styles
    Author:
    ========================================================================== */
+body {
+  margin: auto;
+  width: 960px; }
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
+    body {
+      width: 764px; } }
+  @media only screen and (max-width: 767px) {
+    body {
+      width: 320px; } }
+  @media only screen and (min-width: 480px) and (max-width: 767px) {
+    body {
+      width: 480px; } }
+  body #container div#main section#content {
+    width: 65.667%;
+    margin-right: 0.5%;
+    margin-left: 0.5%;
+    float: left; }
+  body #container div#main section#secondary {
+    width: 32.333%;
+    margin-right: 0.5%;
+    margin-left: 0.5%;
+    float: right; }
+
 /* =============================================================================
    PLACEHOLDER Media Queries for Responsive Design.
    These override the primary ('mobile first') styles

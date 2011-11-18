@@ -15,47 +15,49 @@
    Author:
    ========================================================================== */
 
-body {
-  @include grid_container;
-  .home {
-  }
-  .blog {
-  }
-  .single {
-  }
-  .category {
-  }
-  .archive {
-  }
-  .date {
-  }
-  #container {
-    header#page-header{
-      hgroup {
-        h1 {
-        }
-        h2 {
-        }
-      }
-      nav {
-      }
+html {
+  body {
+    @include grid_container;
+    .home {
     }
-    div#main {
-      section#content {
-        @include grid(16);
-        float: left;
-        article {
-          header {
+    .blog {
+    }
+    .single {
+    }
+    .category {
+    }
+    .archive {
+    }
+    .date {
+    }
+    #container {
+      header#page-header{
+        hgroup {
+          h1 {
+          }
+          h2 {
           }
         }
+        nav {
+        }
       }
-      section#secondary {
-        @include grid(8);
-        float: right;
+      div#main {
+        section#content {
+          @include grid(16);
+          float: left;
+          article {
+            header {
+            }
+          }
+        }
+        section#secondary {
+          @include grid(8);
+          float: right;
+        }
       }
-    }
-    footer#page-footer {
+      footer#page-footer {
 
+      }
     }
   }
 }

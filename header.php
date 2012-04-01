@@ -7,6 +7,7 @@
  * @since Initium 1.0
  */
 ?>
+
 <!doctype html>
 <!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
 <!--[if lt IE 7]> <html class="no-js ie6 oldie" <?php language_attributes(); ?>> <![endif]-->
@@ -21,24 +22,24 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
   <title><?php
-  /*
-   * Print the <title> tag based on what is being viewed.
-   */
-  global $page, $paged;
+    /*
+     * Print the <title> tag based on what is being viewed.
+     */
+    global $page, $paged;
 
-  wp_title( '|', true, 'right' );
+    wp_title( '|', true, 'right' );
 
-  // Add the blog name.
-  bloginfo( 'name' );
+    // Add the blog name.
+    bloginfo( 'name' );
 
-  // Add the blog description for the home/front page.
-  $site_description = get_bloginfo( 'description', 'display' );
-  if ( $site_description && ( is_home() || is_front_page() ) )
-    echo " | $site_description";
+    // Add the blog description for the home/front page.
+    $site_description = get_bloginfo( 'description', 'display' );
+    if ( $site_description && ( is_home() || is_front_page() ) )
+      echo " | $site_description";
 
-  // Add a page number if necessary:
-  if ( $paged >= 2 || $page >= 2 )
-    echo ' | ' . sprintf( __( 'Page %s', 'twentyeleven' ), max( $paged, $page ) );
+    // Add a page number if necessary:
+    if ( $paged >= 2 || $page >= 2 )
+      echo ' | ' . sprintf( __( 'Page %s', 'twentyeleven' ), max( $paged, $page ) );
 
   ?></title>
 
@@ -49,6 +50,7 @@
     <meta name="author" content="<?php bloginfo('admin_email'); ?>">
     <?php while ( have_posts() ) : the_post(); ?>
       <meta property="og:description" content="<?php echo strip_tags(get_the_excerpt($post->ID)); ?>" />
+      <meta name="description" content="<?php echo strip_tags(get_the_excerpt($post->ID)); ?>" />
     <?php endwhile; // end of the loop. ?>
   <?php  } else { ?>
     <meta property="og:type" content="blog" />
@@ -79,7 +81,7 @@
 
   <!-- All JavaScript at the bottom, except for Modernizr and Respond.
      Modernizr enables HTML5 elements & feature detects; Respond is a polyfill for min/max-width CSS3 Media Queries -->
-  <script src="<?php bloginfo('template_url'); ?>/js/libs/modernizr-2.0.6.min.js"></script>
+  <script src="<?php bloginfo('template_url'); ?>/js/libs/modernizr-2.5.3.min.js"></script>
 
   <?php
     /* We add some JavaScript to pages with the comment form
@@ -98,8 +100,14 @@
 
 </head>
 <body <?php body_class(); ?>>
+
+  <!-- Prompt IE 6 users to install Chrome Frame. Remove this if you support IE 6.
+       chromium.org/developers/how-tos/chrome-frame-getting-started -->
+  <!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
+
   <div id="container"  class="hfeed">
-    <header id="page_header" role="banner">
+    
+    <header id="page-header" role="banner">
       <hgroup role="banner">
         <h1><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
         <h2><?php bloginfo('description'); ?></h2>
@@ -112,6 +120,6 @@
         <?php /* Our navigation menu.  If one isn't filled out, wp_nav_menu falls back to wp_page_menu. The menu assiged to the primary position is the one used. If none is assigned, the menu with the lowest ID is used. */ ?>
         <?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
       </nav><!-- #access -->
-    </header>
+    </header><!-- /header#page-header -->
 
-    <div id="main">
+      <div id="main" role="main">

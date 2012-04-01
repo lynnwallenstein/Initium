@@ -10,6 +10,8 @@
  */
 ?>
 
+    </div><!-- /div#main -->
+    
     <footer id="colophon" role="contentinfo">
 
         <?php
@@ -24,34 +26,28 @@
           <a href="<?php echo esc_url( __( 'http://wordpress.org/', 'initium' ) ); ?>" title="<?php esc_attr_e( 'Semantic Personal Publishing Platform', 'initium' ); ?>" rel="generator"><?php printf( __( 'Proudly powered by %s', 'initium' ), 'WordPress' ); ?></a>
         </div>
     </footer><!-- #colophon -->
+
   </div> <!--! end of #container -->
 
   <!-- JavaScript at the bottom for fast page loading -->
 
   <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
-  <script>window.jQuery || document.write('<script src="<?php bloginfo('template_url'); ?>/js/libs/jquery-1.7.0.min.js"><\/script>')</script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+  <script>window.jQuery || document.write('<script src="<?php bloginfo('template_url'); ?>/js/libs/jquery-1.7.1.min.js"><\/script>')</script>
 
   <!-- scripts concatenated and minified via ant build script-->
   <script src="<?php bloginfo('template_url'); ?>/js/plugins.js"></script>
   <script src="<?php bloginfo('template_url'); ?>/js/script.js"></script>
   <!-- end scripts-->
 
-  <!-- Change UA-XXXXX-X to be your site's ID -->
+  <!-- Asynchronous Google Analytics snippet. Change UA-XXXXX-X to be your site's ID.
+       mathiasbynens.be/notes/async-analytics-snippet -->
   <script>
-    window._gaq = [['_setAccount','UAXXXXXXXX1'],['_trackPageview'],['_trackPageLoadTime']];
-    Modernizr.load({
-      load: ('https:' == location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js'
-    });
+    var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+    g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+    s.parentNode.insertBefore(g,s)}(document,'script'));
   </script>
-
-
-  <!-- Prompt IE 6 users to install Chrome Frame. Remove this if you want to support IE 6.
-       chromium.org/developers/how-tos/chrome-frame-getting-started -->
-  <!--[if lt IE 7 ]>
-    <script defer src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
-    <script defer>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
-  <![endif]-->
 
   <!-- http://codex.wordpress.org/Function_Reference/wp_footer
     Put this template tag immediately before </body> tag in a theme template -->

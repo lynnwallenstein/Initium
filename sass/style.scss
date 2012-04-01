@@ -1,0 +1,77 @@
+//
+// HTML5 ✰ Boilerplate (SCSS Edition)
+//
+// What follows is the result of much research on cross-browser styling.
+// Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+// Kroc Camen, and the H5BP dev community and team.
+//
+// Detailed information about this CSS: h5bp.com/css
+//
+
+@import "mixins/mixins";
+@import "marcotte-grid";
+@import "normalize"; 
+@import "boilerplate";
+@import "wordpress";
+
+// ==|== primary styles =====================================================
+//   Author:
+// =======================================================================
+
+
+// Base
+
+html {
+  body {
+    @include grid_container;
+    background: #fff;
+    &.home {
+    }
+    &.blog {
+    }
+    &.single {
+    }
+    &.category {
+    }
+    &.archive {
+    }
+    &.date {
+    }
+    #container {
+      header#page-header {
+        hgroup {
+          h1 {
+          }
+          h2 {
+          }
+        }
+        nav {
+        }
+      } //header#page-header
+      div#main {
+        section#content {
+          @include grid(16);
+          float: left;
+          article {
+            header {
+            }
+          }
+        }
+        section#secondary {
+          @include grid(8);
+          float: right;
+        }
+      } // div#main
+      footer#page-footer {
+      } // footer#page-footer
+    }
+  } // body
+} // html
+
+// Layout .l-
+
+// Modules  - NO #ID
+
+// State
+
+@import "print";

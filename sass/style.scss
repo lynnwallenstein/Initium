@@ -1,30 +1,43 @@
-//
-// HTML5 ✰ Boilerplate (SCSS Edition)
-//
-// What follows is the result of much research on cross-browser styling.
-// Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
-// Kroc Camen, and the H5BP dev community and team.
-//
-// Detailed information about this CSS: h5bp.com/css
-//
+// *****************************************************************************
+//  STYLES
+//  By: Lynn Wallenstein
+// *****************************************************************************
 
-@import "mixins/mixins";
-@import "marcotte-grid";
-@import "normalize"; 
-@import "boilerplate";
-@import "wordpress";
+// ------------------------------------------------------------------ 
+//  Includes
+// ------------------------------------------------------------------ 
 
-// ==|== primary styles =====================================================
-//   Author:
-// =======================================================================
+// Global Attibutes
+@import "globals/mixins/mixins";
+@import "globals/variables";
 
+// Plugins - Come from Somewhere Else
+@import "plugins/marcotte-grid";
+@import "plugins/normalize"; 
+@import "plugins/boilerplate";
 
-// Base
+// Sections of Page
+@import "sections/header"; 
+@import "sections/article"; 
+@import "sections/comment-list"; 
+@import "sections/comment-form"; 
+@import "sections/tagcloud"; 
+@import "sections/search-form"; 
+@import "sections/sidebar"; 
+@import "sections/footer"; 
+
+// ------------------------------------------------------------------ 
+//  Primary Styles
+//  - Keep this limited. Styles should live in proper section. modules files.
+//  - Layout classes should begin with .layout-
+//  - Modules/Plugins should never be IDs
+//  - States should follow the "is-visible" convention
+// ------------------------------------------------------------------ 
 
 html {
   body {
     @include grid_container;
-    background: #fff;
+    background: $siteBackgroundColor;    
     &.home {
     }
     &.blog {
@@ -37,41 +50,18 @@ html {
     }
     &.date {
     }
-    #container {
-      header#page-header {
-        hgroup {
-          h1 {
-          }
-          h2 {
-          }
-        }
-        nav {
-        }
-      } //header#page-header
-      div#main {
-        section#content {
-          @include grid(16);
-          float: left;
-          article {
-            header {
-            }
-          }
-        }
-        section#secondary {
-          @include grid(8);
-          float: right;
-        }
-      } // div#main
-      footer#page-footer {
-      } // footer#page-footer
-    }
+    div#main {
+      section#content {
+        @include grid(16);
+        float: left;
+      }
+    } // div#main
   } // body
 } // html
 
-// Layout .l-
+// ------------------------------------------------------------------ 
+//  Primary Styles
+// ------------------------------------------------------------------ 
 
-// Modules  - NO #ID
-
-// State
-
-@import "print";
+@import "components/responsive";
+@import "globals/print";

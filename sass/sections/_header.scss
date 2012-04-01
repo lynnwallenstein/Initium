@@ -1,0 +1,31 @@
+// *****************************************************************************
+// HEADER
+// *****************************************************************************
+
+header#page-header {
+  hgroup {
+    h1 {
+    }
+    h2 {
+    }
+  }
+  nav#access {
+    div.skip-link {
+      height: 0;
+      margin: 0;
+      padding: 0;
+      visibility: hidden;
+    }
+    div.menu {
+      ul {
+        li {
+          @include inline-block;
+          margin-right: 10px;
+          &:last-child {
+            margin-right: 0;
+          }
+        }
+      }
+    }
+  }
+} //header#page-header

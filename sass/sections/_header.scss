@@ -5,17 +5,17 @@
 header#page-header {
   hgroup {
     h1 {
-    }
+    } // h1
     h2 {
-    }
-  }
+    } // h2
+  } // hgroup
   nav#access {
     div.skip-link {
       height: 0;
       margin: 0;
       padding: 0;
       visibility: hidden;
-    }
+    } // div.skip-link
     div.menu {
       ul {
         li {
@@ -23,9 +23,9 @@ header#page-header {
           margin-right: 10px;
           &:last-child {
             margin-right: 0;
-          }
-        }
-      }
-    }
-  }
+          } // &:last-child
+        } // li
+      } // ul
+    } // div.menu
+  } // nav#access
 } //header#page-header

@@ -1,0 +1,23 @@
+// *****************************************************************************
+// AUTHOR BLOG
+// *****************************************************************************
+
+.author {
+  h1.page-title.author {
+    font-weight: normal;
+    padding: 0;
+    margin: 20px 0;
+    line-height: 30px;
+    a {
+      text-decoration: none;
+    } // a
+  } // h1.page-title.author
+  div#author-info {
+    margin-bottom: 30px;
+    padding: 10px;
+    div#author-avatar {
+      float: left;
+      margin: 0 10px 10px 0;
+    } // div#author-avatar
+  } // div#author-info
+} // .author

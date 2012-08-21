@@ -1,0 +1,20 @@
+// *****************************************************************************
+// NAVIGATION
+// *****************************************************************************
+
+nav#nav-single {
+  @extend .clearfix;
+  margin-bottom: 30px;
+  h3 {
+    @extend .adelle;
+    text-transform: uppercase;
+    margin: 0;
+    padding: 0;
+  }
+  span.nav-previous {
+    float: left;
+  }
+  span.nav-next {
+    float: right;
+  }
+}

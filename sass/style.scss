@@ -3,65 +3,85 @@
 //  By: Lynn Wallenstein
 // *****************************************************************************
 
-// ------------------------------------------------------------------ 
+// ------------------------------------------------------------------
+//  Colors
+// ------------------------------------------------------------------
+
+
+// ------------------------------------------------------------------
+//  TypeKit - Use via @extend
+// ------------------------------------------------------------------
+
+
+
+// ------------------------------------------------------------------
 //  Includes
-// ------------------------------------------------------------------ 
+// ------------------------------------------------------------------
 
 // Global Attibutes
-@import "globals/mixins/mixins";
-@import "globals/variables";
+@import "dependencies/mixins/mixins";
+@import "dependencies/variables";
 
 // Plugins - Come from Somewhere Else
 @import "plugins/marcotte-grid";
-@import "plugins/normalize"; 
+@import "plugins/normalize";
 @import "plugins/boilerplate";
 
 // Sections of Page
-@import "sections/header"; 
-@import "sections/article"; 
-@import "sections/comment-list"; 
-@import "sections/comment-form"; 
-@import "sections/tagcloud"; 
-@import "sections/search-form"; 
-@import "sections/sidebar"; 
-@import "sections/footer"; 
+@import "sections/header";
+@import "sections/article";
+@import "sections/comment-list";
+@import "sections/comment-form";
+@import "sections/tagcloud";
+@import "sections/search-form";
+@import "sections/sidebar";
+@import "sections/footer";
+@import "sections/navigation";
+@import "sections/author-block";
 
-// ------------------------------------------------------------------ 
+// ------------------------------------------------------------------
 //  Primary Styles
 //  - Keep this limited. Styles should live in proper section. modules files.
 //  - Layout classes should begin with .layout-
 //  - Modules/Plugins should never be IDs
 //  - States should follow the "is-visible" convention
-// ------------------------------------------------------------------ 
+// ------------------------------------------------------------------
 
 html {
   body {
     @include grid_container;
-    background: $siteBackgroundColor;    
+    background: $siteBackgroundColor;
     &.home {
-    }
+    } // &.home
     &.blog {
-    }
+    } // &.blog
     &.single {
-    }
+    } // &.single
     &.category {
-    }
+    } // &.category
     &.archive {
-    }
+    } // &.archive
     &.date {
-    }
+    } // &.date
+    &.page {
+      div#main section#content {
+        @include grid(24);
+      } // div#main section#content
+    } // &.page
     div#main {
+      @extend .clearfix;
+      @include grid(24);
+      background: #fff;
+      display: block;
+      padding: 20px 30px;
       section#content {
         @include grid(16);
         float: left;
-      }
+      } // section#content
     } // div#main
   } // body
 } // html
 
-// ------------------------------------------------------------------ 
-//  Primary Styles
-// ------------------------------------------------------------------ 
 
 @import "components/responsive";
 @import "globals/print";

@@ -26,14 +26,6 @@ body, button, input, select, textarea {
   color: #222;
 }
 
-.assistive-text {
-  display: none;
-  height: 0;
-  margin: 0;
-  padding: 0;
-  visibility: hidden;
-  width: 0;
-}
 
 //
 // Remove text-shadow in selection highlight: h5bp.com/i
@@ -41,8 +33,8 @@ body, button, input, select, textarea {
 // Also: hot pink! (or customize the background color to match your design)
 //
 
-::-moz-selection { background: #fe57a1; color: #fff; text-shadow: none; }
-::selection { background: #fe57a1; color: #fff; text-shadow: none; }
+::-moz-selection { background: #b3d4fc; text-shadow: none; }
+::selection { background: #b3d4fc; text-shadow: none; }
 
 //=============================================================================
 //   Links

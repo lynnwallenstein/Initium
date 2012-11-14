@@ -27,7 +27,7 @@
 
       <?php if ( comments_open() ) : ?>
       <div class="comments-link">
-        <?php comments_popup_link( '<span class="leave-reply">' . __( 'Reply', 'initium' ) . '</span>', _x( '1', 'comments number', 'initium' ), _x( '%', 'comments number', 'initium' ) ); ?>
+        <?php comments_popup_link( '<span class="leave-reply">' . __( 'No Comments', 'initium' ) . '</span>', _x( '1 Comment', 'comments number', 'initium' ), _x( '% Comments', 'comments number', 'initium' ) ); ?>
       </div>
       <?php endif; ?>
     </header><!-- .entry-header -->

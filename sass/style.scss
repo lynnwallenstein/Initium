@@ -28,16 +28,17 @@
 @import "plugins/boilerplate";
 
 // Sections of Page
-@import "sections/header";
 @import "sections/article";
+@import "sections/author-block";
 @import "sections/comment-list";
 @import "sections/comment-form";
-@import "sections/tagcloud";
+@import "sections/footer";
+@import "sections/header";
+@import "sections/navigation";
+@import "sections/pagination";
 @import "sections/search-form";
 @import "sections/sidebar";
-@import "sections/footer";
-@import "sections/navigation";
-@import "sections/author-block";
+@import "sections/tagcloud";
 
 // ------------------------------------------------------------------
 //  Primary Styles
@@ -123,3 +124,6 @@ html {
 
 @import "components/responsive";
 @import "dependencies/print";
+
+// Pages
+@import "pages/homepage";

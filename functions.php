@@ -131,6 +131,9 @@ function initium_setup() {
   add_image_size( 'large-feature', HEADER_IMAGE_WIDTH, HEADER_IMAGE_HEIGHT, true ); // Used for large feature (header) images
   add_image_size( 'small-feature', 500, 300 ); // Used for featured posts if a large-feature doesn't exist
 
+  add_image_size( 'article-feature', 650, 350 ); // Article Featured Image
+  add_image_size( 'small-homepage', 260, 150 ); // Small Image for Smaller Story
+
 }
 endif; // initium_setup
 
@@ -150,7 +153,7 @@ add_filter( 'excerpt_length', 'initium_excerpt_length' );
  * Returns a "Continue Reading" link for excerpts
  */
 function initium_continue_reading_link() {
-  return ' <a href="'. esc_url( get_permalink() ) . '">' . __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'initium' ) . '</a>';
+  return ' <a class="read-more-link" href="'. esc_url( get_permalink() ) . '">' . __( 'Continue reading', 'initium' ) . '</a>';
 }
 
 /**
@@ -254,7 +257,7 @@ function initium_content_nav( $nav_id ) {
   global $wp_query;
 
   if ( $wp_query->max_num_pages > 1 ) : ?>
-    <nav id="<?php echo $nav_id; ?>">
+    <nav id="<?php echo $nav_id; ?>" class="page-nav">
       <h3 class="assistive-text"><?php _e( 'Post navigation', 'initium' ); ?></h3>
       <div class="nav-previous"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'initium' ) ); ?></div>
       <div class="nav-next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'initium' ) ); ?></div>
@@ -385,7 +388,7 @@ if ( ! function_exists( 'initium_posted_on' ) ) :
  * @since Initium 1.0
  */
 function initium_posted_on() {
-  printf( __( '<span class="sep">Posted on </span><a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date" datetime="%3$s" pubdate>%4$s</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="%5$s" title="%6$s" rel="author">%7$s</a></span></span>', 'initium' ),
+  printf( __( 'by <span class="author vcard"><a class="url fn n" href="%5$s" title="%6$s" rel="author">%7$s</a></span> POSTED <a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date" datetime="%3$s" pubdate>%4$s</time></a>', 'initium' ),
     esc_url( get_permalink() ),
     esc_attr( get_the_time() ),
     esc_attr( get_the_date( 'c' ) ),

@@ -81,7 +81,8 @@
 
   <!-- All JavaScript at the bottom, except for Modernizr and Respond.
      Modernizr enables HTML5 elements & feature detects; Respond is a polyfill for min/max-width CSS3 Media Queries -->
-  <script src="<?php bloginfo('template_url'); ?>/js/vendor/modernizr.min.js"></script>
+  <script src="<?php bloginfo('template_url'); ?>/vendor/assets/components/modernizr/modernizr.min.js"></script>
+  <script src="<?php bloginfo('template_url'); ?>/vendor/assets/components/prefix-free/prefixfree.min.js"></script>
 
   <?php
     /* We add some JavaScript to pages with the comment form

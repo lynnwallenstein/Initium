@@ -3,28 +3,27 @@
 //  By: Lynn Wallenstein
 // *****************************************************************************
 
+// Might need ☃
 // ------------------------------------------------------------------
-//  Colors
-// ------------------------------------------------------------------
-
+@charset "UTF-8";
 
 // ------------------------------------------------------------------
 //  TypeKit - Use via @extend
 // ------------------------------------------------------------------
 
-
-
 // ------------------------------------------------------------------
 //  Includes
 // ------------------------------------------------------------------
 
-// Global Attibutes
+// Vendor
+// ------------------------------------------------------------------
 @import "dependencies/mixins/mixins";
 @import "dependencies/variables";
+@import "../vendor/assets/components/keanu/keanu";
+@import "../vendor/assets/components/normalize-css/normalize.css";
+@import "../vendor/assets/components/susy/sass/susy";
 
 // Plugins - Come from Somewhere Else
-@import "plugins/marcotte-grid";
-@import "plugins/normalize";
 @import "plugins/boilerplate";
 
 // Sections of Page
@@ -121,8 +120,6 @@ html {
   } // body
 } // html
 
-
-@import "components/responsive";
 @import "dependencies/print";
 
 // Pages

@@ -8,6 +8,14 @@
 @charset "UTF-8";
 
 // ------------------------------------------------------------------
+//  Susy Grid Overwrites
+// ------------------------------------------------------------------
+
+$total-columns: 24;
+$container-width: 1024px;
+$grid-padding: 0;
+
+// ------------------------------------------------------------------
 //  TypeKit - Use via @extend
 // ------------------------------------------------------------------
 
@@ -48,47 +56,62 @@
 // ------------------------------------------------------------------
 
 html {
+  background-color: $site-background-color;
+  margin: 0;
+  padding: 0;
+
   body {
-    background: $siteBackgroundColor;
-    color: $textColor;
+    color: $text-color;
     font-family: $body-stack;
-    font-size: $baseFontSize;
-    line-height: $baseLineHeight;
+    font-size: $base-font-size;
+    line-height: $base-line-height;
     margin: 0;
     padding: 0;
-    div#container {
-      @include grid_container;
+
+    #container {
+      @include container;
+      position: relative;
     }
+
     p {
-      font-size: $baseFontSize;
-      line-height: $baseLineHeight;
+      font-size: $base-font-size;
+      line-height: $base-line-height;
     }
+
     h1 {
-      color: $headingsColor;
-      font-family: $headingsFontFamily;
-      font-weight: $headingsFontWeight;
-    } // h1, h2, h3
+      color: $headings-color;
+      font-family: $headings-font-family;
+      font-weight: $headings-font-weight;
+    } // h1
+
     h2, h3, h4, h5, h6 {
-      color: $subHeadingsColor;
-      font-family: $subHeadingsFontFamily;
-      font-weight: $subHeadingsFontWeight;
+      color: $sub-headings-color;
+      font-family: $sub-headings-font-family;
+      font-weight: $sub-headings-font-weight;
     } // h4, h5, h6
+
     a, a:link {
-      color: $linkColor;
-    } // a, a:link;
-    a:hover {
-      color: $linkColorHover;
-    } // a:hover;
-    a:active {
-      color: $linkColorActive;
-    } // a:active;
-    a:visited {
-      color: $linkColorVisited;
-    } //  a:visited
+      color: $link-color;
+
+      &:hover {
+        color: $link-color-hover;
+      } // a:hover
+
+      &:active {
+        color: $link-color-active;
+      } // a:active;
+
+      &:visited {
+        color: $link-color-visited;
+      } //  a:visited
+
+    } // a, a:link
+
     nav {
-      font-family: $navFontFamily;
-      font-weight: $navFontWeight;
+      font-family: $nav-font-family;
+      font-weight: $nav-font-weight;
     }
+
     &.home {
     } // &.home
     &.blog {
@@ -101,22 +124,30 @@ html {
     } // &.archive
     &.date {
     } // &.date
+
     &.page {
-      div#main section#content {
-        @include grid(24);
-      } // div#main section#content
+
+      #main #content {
+        @include span-columns(24);
+      } // #main #content
+
     } // &.page
-    div#main {
-      @extend .clearfix;
-      @include grid(24);
-      background: #fff;
+
+    #main {
+      @extend %clearfix;
+      @include span-columns(24);
+      background-color: $white;
       display: block;
       padding: 20px 30px;
-      section#content {
-        @include grid(16);
+      text-align: left;
+
+      #content {
+        @include span-columns(16);
         float: left;
-      } // section#content
-    } // div#main
+      } // #content
+
+    } // #main
+
   } // body
 } // html
 

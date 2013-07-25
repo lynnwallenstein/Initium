@@ -112,7 +112,7 @@ function initium_setup() {
   // The next four constants set how Initium supports custom headers.
 
   // The default header text color
-  define( 'HEADER_TEXTCOLOR', '000' );
+  define( 'HEADER_text-color', '000' );
 
   // By leaving empty, we allow for random image rotation.
   define( 'HEADER_IMAGE', '' );

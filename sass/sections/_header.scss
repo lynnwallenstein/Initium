@@ -2,31 +2,40 @@
 // HEADER
 // *****************************************************************************
 
-header#page-header {
-  hgroup {
-    h1 {
-    } // h1
-    h2 {
-    } // h2
-  } // hgroup
-  nav#access {
+#page-header {
+
+  h1 {
+    margin: 0;
+    padding: 0;
+  } // h1
+
+  h2 {
+  } // h2
+
+  #access {
+
     .assistive-text {
-      @extend .visuallyhidden;
+      @extend %visually-hidden;
     } // .assistive-text
-    div.skip-link {
-      height: 0;
-      margin: 0;
-      padding: 0;
-      visibility: hidden;
-    } // div.skip-link
-    ul.menu {
+
+    .skip-link {
+      @extend %visually-hidden;
+    } // .skip-link
+
+    .menu {
+
       li {
         @include inline-block;
-        margin-right: 10px;
+        margin-right: 20px;
+
         &:last-child {
           margin-right: 0;
         } // &:last-child
+
       } // li
-    } // ul
-  } // nav#access
-} //header#page-header
+
+    } // .menu
+
+  } // #access
+
+} //#page-header

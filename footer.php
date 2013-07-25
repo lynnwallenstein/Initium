@@ -10,7 +10,7 @@
  */
 ?>
 
-    </div><!-- /div#main -->
+    </div><!-- #main -->
 
     <footer id="colophon" role="contentinfo">
 
@@ -27,7 +27,7 @@
         </div>
     </footer><!-- #colophon -->
 
-  </div> <!--! end of #container -->
+  </div> <!-- #container -->
 
   <!-- JavaScript at the bottom for fast page loading -->
 

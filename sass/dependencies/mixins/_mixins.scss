@@ -1,4 +1,4 @@
-// LivingSocial  SCSS Mixins
+// SCSS Mixins
 // Combination of Thoughtbots Bourbon, LESS Mixins (Preboot) & Less Elements
 // -----------------------------------------------------------------
 
@@ -69,23 +69,13 @@
 
 // Placeholder text
 // -------------------------
-@mixin placeholder($color: $placeholderText) {
+@mixin placeholder($color: $placeholder-text) {
   :-moz-placeholder {
     color: $color;
   }
   ::-webkit-input-placeholder {
     color: $color;
   }
-}
-
-
-// Site container
-// -------------------------
-@mixin container-fixed() {
-  width: $gridRowWidth;
-  margin-left: auto;
-  margin-right: auto;
-  @include clearfix();
 }
 
 

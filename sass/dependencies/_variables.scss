@@ -21,31 +21,47 @@ $white: #fff;
 // -------------------------------------------------------------------
 
 $gray: #a29f99;
-$grayLight: tint($gray, 20%);
-$grayLighter: tint($gray, 50%);
-$grayLightest: tint($gray, 90%);
-$grayDark: shade($gray, 20%);
-$grayDarker: shade($gray, 50%);
-$grayDarkest: shade($gray, 80%);
+$gray-light: tint($gray, 20%);
+$gray-lighter: tint($gray, 50%);
+$gray-lightest: tint($gray, 90%);
+$gray-dark: shade($gray, 20%);
+$gray-darker: shade($gray, 50%);
+$gray-darkest: shade($gray, 80%);
+
+//  Shadows and Glows
+// ------------------------------------------------------------------
+
+$color-shadow-dark: hsla(0,0,0,.75);
+$color-shadow: hsla(0,0,0,.5);
+$color-shadow-light: hsla(0,0,0,.15);
+$color-shadow-lighter: hsla(0,0,0,.05);
+$color-shadow-lightest: hsla(0,0,0,.03);
+
+$color-glow-bright: hsla(100,100,100,.75);
+$color-glow: hsla(100,100,100,.5);
+$color-glow-dim: hsla(100,100,100,.25);
+$color-glow-dimmer: hsla(100,100,100,.15);
 
 // ------------------------------------------------------------------
 //  COLORS 2 THINGS
 // ------------------------------------------------------------------
 
-$siteBackgroundColor: $white;
+$site-background-color: $white;
 
 // Text Color
-$textColor: $grayDarker;
-$textColorLight: $grayLight;
+$text-color: $gray-darker;
+$text-color-light: $gray-light;
 
 // Input placeholder text color
-$placeholderText: $grayLight;
+$placeholder-text: $gray-light;
 
 // Links
-$linkColor: blue;
-$linkColorHover: darken($linkColor, 20%);
-$linkColorActive: lighten($linkColor, 20%);
-$linkColorVisited: $grayDark;
+$link-color: blue;
+$link-color-hover: darken($link-color, 20%);
+$link-color-active: lighten($link-color, 20%);
+$link-color-visited: $gray-dark;
+
+$app-color: blue;
 
 // ------------------------------------------------------------------
 //  FONT STACKS
@@ -54,29 +70,29 @@ $linkColorVisited: $grayDark;
 $body-stack: "Helvetica Neue", Helvetica, Arial, sans-serif;
 $alt-stack: "Arial Rounded MT Bold", Helvetica, Arial, sans-serif;
 $legal-stack: Georgia, "Times New Roman", Times, serif;
-$baseFontSize: 13px;
-$baseLineHeight: 18px;
+$base-font-size: 13px;
+$base-line-height: 18px;
 
 //  Headings
 // ------------------------------------------------------------------
-$headingsFontFamily: $body-stack;
-$headingsFontWeight: normal; // instead of browser default, bold
-$headingsColor: ''; // empty to use BS default, $textColor
+$headings-font-family: $body-stack;
+$headings-font-weight: normal; // instead of browser default, bold
+$headings-color: ''; // empty to use BS default, $text-color
 
-$subHeadingsFontFamily: $body-stack;
-$subHeadingsFontWeight: normal; // instead of browser default, bold
-$subHeadingsColor: ''; // empty to use BS default, $textColor
+$sub-headings-font-family: $body-stack;
+$sub-headings-font-weight: normal; // instead of browser default, bold
+$sub-headings-color: ''; // empty to use BS default, $text-color
 
 //  Navigation
 // ------------------------------------------------------------------
-$navFontFamily: $body-stack;
-$navFontWeight: normal; // instead of browser default, bold
+$nav-font-family: $body-stack;
+$nav-font-weight: normal; // instead of browser default, bold
 
 //  Body
 // ------------------------------------------------------------------
-$baseFontFamily: $body-stack;
-$altFontFamily: $alt-stack;
+$base-font-family: $body-stack;
+$alt-font-family: $alt-stack;
 
 ///  Special Case
 // ------------------------------------------------------------------
-$legalFontFamily: $legal-stack;
+$legal-font-family: $legal-stack;

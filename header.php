@@ -65,13 +65,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- Place favicon.ico and apple-touch-icon.png in the root directory: mathiasbynens.be/notes/touch-icons -->
-  <link rel="icon" type="image/png" href="<?php bloginfo('template_url'); ?>/images/favicon.png" />
+  <link rel="icon" type="image/png" href="<?php bloginfo('template_url'); ?>/img/favicon.png" />
   <!-- For iPhone 4 with high-resolution Retina display: -->
-  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="<?php bloginfo('template_url'); ?>/images/apple-touch-icon-114x114-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="<?php bloginfo('template_url'); ?>/img/apple-touch-icon-114x114-precomposed.png">
   <!-- For first-generation iPad: -->
-  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="<?php bloginfo('template_url'); ?>/images/apple-touch-icon-72x72-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="<?php bloginfo('template_url'); ?>/img/apple-touch-icon-72x72-precomposed.png">
   <!-- For non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
-  <link rel="apple-touch-icon-precomposed" href="<?php bloginfo('template_url'); ?>/images/apple-touch-icon-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" href="<?php bloginfo('template_url'); ?>/img/apple-touch-icon-precomposed.png">
 
   <!-- CSS: implied media="all" -->
   <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/style.css">
@@ -79,8 +79,7 @@
   <link rel="profile" href="http://gmpg.org/xfn/11" />
   <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 
-  <!-- All JavaScript at the bottom, except for Modernizr and Respond.
-     Modernizr enables HTML5 elements & feature detects; Respond is a polyfill for min/max-width CSS3 Media Queries -->
+  <!-- All JavaScript at the bottom, except for Modernizr, Prefix Free and Font Stuff -->
   <script src="<?php bloginfo('template_url'); ?>/vendor/assets/components/modernizr/modernizr.min.js"></script>
   <script src="<?php bloginfo('template_url'); ?>/vendor/assets/components/prefix-free/prefixfree.min.js"></script>
 
@@ -109,10 +108,8 @@
   <div id="container"  class="hfeed">
 
     <header id="page-header" role="banner">
-      <hgroup role="banner">
-        <h1><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-        <h2><?php bloginfo('description'); ?></h2>
-      </hgroup>
+      <h1><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+      <h2><?php bloginfo('description'); ?></h2>
       <nav id="access" role="navigation">
         <h3 class="assistive-text"><?php _e( 'Main menu', 'initium' ); ?></h3>
         <?php /*  Allow screen readers / text browsers to skip the navigation menu and get right to the good stuff. */ ?>
@@ -123,4 +120,4 @@
       </nav><!-- #access -->
     </header><!-- /header#page-header -->
 
-      <div id="main" role="main">
+    <div id="main" role="main">

@@ -48,9 +48,9 @@ body, button, input, select, textarea {
 }
 
 hr {
-  margin: $baseLineHeight 0;
+  margin: $base-line-height 0;
   border: 0;
-  border-top: 1px solid $grayLightest;
+  border-top: 1px solid $gray-lightest;
   border-bottom: 1px solid $white;
 }
 

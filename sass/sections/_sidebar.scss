@@ -3,7 +3,7 @@
 // *****************************************************************************
 
 section#secondary {
-  @include grid(8);
+  @include span-columns(8);
   float: right;
   aside.widget {
   } // aside.widget
